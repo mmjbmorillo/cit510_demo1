@@ -1,22 +1,29 @@
 <template>
 <center><v-card 
     class="ma-15 pa-5"
-    max-width="344"
+    max-width="600"
     elevation = "11"
+    style="background-color: #003865;"
     >
     <img src="../assets/calculator-logo.png" width="120" height="120">
+    <v-card-title style="color: #FEB139; font-family: Feather; font-size: 30px; margin-top: 5px; margin-bottom: 5px;"> Basic Calculator </v-card-title>
     <v-container fluid>
-      <v-text-field label="First Input" v-model.number="fNumber"></v-text-field>
-      <v-text-field label="Second Input" v-model.number="sNumber"></v-text-field>
+      <v-text-field label="First Input" v-model.number="fNumber" style="color:white; max-width: 400px;"></v-text-field>
+      <v-text-field label="Second Input" v-model.number="sNumber" style="color:white; max-width: 400px;"></v-text-field>
       
-      <v-btn class="ma-2" color = "primary" @click="doSum">Compute</v-btn>
-      <v-btn class="ma-2" color = "error" @click="resetValue">Reset</v-btn><br/><br/>
+      <v-btn class="ma-2" color = "primary" @click="doSum" style="color: white; font-family: Feather; font-size: 15px;">Compute</v-btn>
+      <v-btn class="ma-2" color = "error" @click="resetValue" style="color: white; font-family: Feather; font-size: 15px;">Reset</v-btn><br/><br/>
  
-      <p>Sum: {{sum}}</p>
-      <p>Difference: {{difference}}</p>
-      <p>Product: {{product}}</p>
-      <p>Quotient: {{quotient}}</p>
-      <p>Average: {{average}}</p>
+      <v-chip class="ma-2" label style="color: white; font-family: Feather; font-size: 18px;">Sum: 
+        <p style="color: #FEB139; font-family: Feather; font-size: 18px;">&nbsp;{{sum}}</p></v-chip>
+      <v-chip class="ma-2" label style="color: white; font-family: Feather; font-size: 18px;">Difference: 
+        <p style="color: #FEB139; font-family: Feather; font-size: 18px;">&nbsp;{{difference}}</p></v-chip>
+      <v-chip class="ma-2" label style="color: white; font-family: Feather; font-size: 18px;">Product: 
+        <p style="color: #FEB139; font-family: Feather; font-size: 18px;">&nbsp;{{product}}</p></v-chip><br/>
+      <v-chip class="ma-2" label style="color: white; font-family: Feather; font-size: 18px;">Quotient: 
+        <p style="color: #FEB139; font-family: Feather; font-size: 18px;">&nbsp;{{quotient}}</p></v-chip>
+      <v-chip class="ma-2" label style="color: white; font-family: Feather; font-size: 18px;">Average: 
+        <p style="color: #FEB139; font-family: Feather; font-size: 18px;">&nbsp;{{average}}</p></v-chip>
     </v-container>
   </v-card></center>
 </template>
@@ -52,3 +59,8 @@
 </script>
 
 
+<style>
+  p{
+    color: white;
+  }
+</style>

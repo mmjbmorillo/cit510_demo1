@@ -4,7 +4,7 @@ import StringAppView from '../views/StringAppView.vue'
 import HomeView from '../views/Dashboard.vue'
 import AboutView from '../views/AboutView.vue'
 import ResearchView from '../views/ResearchView.vue'
-import QuizApp from '../views/QuizApp.vue'
+import QuizApplication from '../views/QuizApplication.vue'
 
 
 
@@ -37,9 +37,9 @@ const router = createRouter({
       component: ResearchView
     },
     {
-      path: '/quizapp',
-      name: 'quizapp',
-      component: QuizApp
+      path: '/quizapplication',
+      name: 'quizapplication',
+      component: QuizApplication
     }
 
   ]

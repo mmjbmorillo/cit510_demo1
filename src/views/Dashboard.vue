@@ -1,84 +1,50 @@
 <template>
-<center><v-card 
+  <h1 style="color: #FEB139; font-family: Feather; font-size: 40px; margin-top: 25px; margin-bottom: -20px; justify-content: center;">Guides to Use the Application</h1>
+  <center><v-card 
     class="ma-10 pa-5"
-    max-width="344"
+    max-width="800"
     elevation = "11"
     >
-    <h1>Axios Demo Activity</h1><br>
-    <v-btn color="primary" @click="getQuestions">Show</v-btn>
-  </v-card></center>
-
-
-  <center><v-card
-  class="ma-10 pa-5"
-  max-width="800"
-  elevation = "11">
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col"><h2>Questions</h2></th><h3>&nbsp;</h3>
-        <th scope="col"><h2>Answers</h2></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr v-for="question in questions" :key="question.id">
-        <td>{{ replaceValue(question.question) }}</td>
-        <h3>&#x2192;</h3>
-        <td>{{ replaceValue(question.correct_answer) }}</td>
-      </tr>
-    </tbody>
-  </table></v-card></center>
- 
+    <img src="../assets/basicMath.png" width="300" height="300" style="float: left; margin-right: 20px;"><br/>
+    <h3 style="color: #FEB139; font-family: Feather; font-size: 28px;">Basic Calculator</h3>
+    <p style="text-align: justify; text-indent: 50px; color: #003865; font-family: Feather; font-size: 14px;">This section is the basic calculator. Basically, there are two inputs: first number and the second number. There are also two buttons: Compute and Reset. When the user inserted inputs on the text inputs, and then clicked the Compute button, the results below will show: sum, difference, product, quotient, and average of the two numbers. After that, when the user clicks the Reset, the two inputs and results will return back to 0 or empty.</p>
+  </v-card>
+  <v-card 
+    class="ma-10 pa-5"
+    max-width="800"
+    elevation = "11"
+    >
+    <img src="../assets/string.png" width="300" height="300" style="float: left; margin-right: 20px;"><br/>
+    <h3 style="color: #FEB139; font-family: Feather; font-size: 28px;">String Manipulator</h3>
+    <p style="text-align: justify; text-indent: 50px; color: #003865; font-family: Feather; font-size: 14px;">This section is the string manipulator. There is one input for the message text, and there are two buttons: Manipulate and Reset. Once the user inputs a message, then clicked the Manipulate button, the results will show up at the bottom: number of vowels, number of characters, number of consonants, and replacing vowels to *. After that, when the user clicks the Reset, the text input and the results will return back to 0 or empty.</p>
+  </v-card>
+  <v-card 
+    class="ma-10 pa-5"
+    max-width="800"
+    elevation = "11"
+    >
+    <img src="../assets/quiz.png" width="300" height="300" style="float: left; margin-right: 20px;"><br/>
+    <h3 style="color: #FEB139; font-family: Feather; font-size: 28px;">Quiz Application</h3>
+    <p style="text-align: justify; text-indent: 50px; color: #003865; font-family: Feather; font-size: 14px;">This section is the quiz application. This is a normal ten-item multiple choice quiz wherein there are four choices, and the system will determine if your answer in every question is correct or not. Once done, a modal will show up to tell the result of your quiz answers. This was implemented using Axios, a promised-based HTTP client for JavaScript. It has the ability to make HTTP requests from the browser and handle the transformation of request and response data.</p>
+  </v-card>
+  <v-card 
+    class="ma-10 pa-5"
+    max-width="800"
+    elevation = "11"
+    >
+    <img src="../assets/research.png" width="300" height="300" style="float: left; margin-right: 20px;"><br/><br/>
+    <h3 style="color: #FEB139; font-family: Feather; font-size: 28px;">Research About Vuetify</h3>
+    <p style="text-align: justify; text-indent: 50px; color: #003865; font-family: Feather; font-size: 14px;">This section is the Vuetify research. This is a page wherein all basic information about Vuetify are to be found. There is also a link that when clicked will open a tab about Vuetify installation. This project actually uses Vuetify. Vuetify is a Vue UI Library with beautifully handcrafted Material Components.</p>
+  </v-card>
+  <v-card 
+    class="ma-10 pa-5"
+    max-width="800"
+    elevation = "11"
+    >
+    <img src="../assets/about.png" width="300" height="300" style="float: left; margin-right: 20px;"><br/><br/>
+    <h3 style="color: #FEB139; font-family: Feather; font-size: 28px;">About the Creator</h3>
+    <p style="text-align: justify; text-indent: 50px; color: #003865; font-family: Feather; font-size: 14px;">This section is about the creator of this application. Hi! I am Manuel James Morillo. I am in my 4th year of college taking up Bachelor of Science in Information Technology. My birthday is on August 27, 2001, and I am born male. This section tells the most basic information about me. Thank you for checking it out!</p>
+  </v-card>
+  </center>
 </template>
-
-<script setup>
-  import { ref } from 'vue';
-  import axios from 'axios';
-
-  const questions = ref([])
-  const quest = ref('')
-
-  async function getQuestions(){
-    axios.get('https://opentdb.com/api.php?amount=10&category=18&difficulty=easy&type=multiple').then( response =>{
-      questions.value=(response.data.results)
-    } )
-  }
-
-  function replaceValue(str) {
-    return str
-      .replace(/&amp;/g, "&")
-      .replace(/&lt;/g, "<")
-      .replace(/&gt;/g, ">")
-      .replace(/&quot;/g, "\"")
-      .replace(/&#039;/g, "'");
-}
-
-  
-
-
-</script>
-
-
-<style>
-  table, th, td{
-    align-content: center;
-    padding: 10px;
-    border: 1px solid black; 
-    border-collapse: separate;
-    border-radius: 5px;
-    margin-top: 10px;
-    border-spacing: 10px;
-  }
-  th{
-    background-color: #6404ec;
-    color:beige;
-  }
-  tr:hover{
-    background-color:#6404ec;
-    color:white;
-  }
-  h3{
-    align-content: center;
-    padding: 20px;
-  }
-</style>
+<script></script>

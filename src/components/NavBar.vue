@@ -1,12 +1,11 @@
 <template>
   <nav>
-      <v-toolbar app color="primary" class="pa-3">
+      <v-toolbar app class="pa-2" style="background-color:#003865; color: white;">
        <v-app-bar-nav-icon @click='toggleDrawer'></v-app-bar-nav-icon>
       <v-toolbar-title >
-        <h2 class="font-weight-light mt-8">Vuetify</h2>
-        <h3>Demo</h3>
+        <h1 style="margin-right:500px; color: #FEB139; font-family: Feather; font-size: 27px;">Midterm Project</h1>
       </v-toolbar-title>
-      <img alt="Vue logo" class="logo" src="../assets/vuetify-logo.png" width="48" height="48"/>
+      <img alt="Vue logo" class="logo" src="../assets/vuetify-logo.png" width="48" height="48" style="margin-left: 200px;"/>
       <v-spacer></v-spacer>
 
       <!-- dropdown menu -->
@@ -17,9 +16,9 @@
         <v-btn
           color="white"
           v-bind="props"
-        ><h3>
-          Menu</h3>
+        ><h2 style="color: #FEB139; font-family: Feather; font-size: 18px;">Menu</h2>
         </v-btn>
+        <h3 style="font-family: Feather; font-size: 18px;"><a href="https://tip.edu.ph" style="color: #FEB139; text-decoration: none; font-weight: bold; margin-right: 20px;" target="_blank">TIP WEBSITE</a></h3>
       </template>
 
       <v-list>
@@ -36,8 +35,9 @@
       
       </v-toolbar>
 
-     <v-navigation-drawer app v-model="drawer" color="primary">
-        <center><img src="../assets/mjm.png" width="70" height="70" class="ma-5"></center>
+     <v-navigation-drawer app v-model="drawer" style="background-color:#003865; color: white;">
+        <center><img src="../assets/mjm.png" width="100" height="100" style="margin-top: 20px;"></center>
+        <h3 style="color: #FEB139; font-family: Feather; font-size: 18px; margin-bottom: 20px;">Manuel James Morillo</h3>
        <v-list-item
           v-for="item in items"
           :key="item.title"
@@ -57,17 +57,20 @@
   const drawer = ref(false)
 
   const  items =  ref([
-           { title: 'Dashboard', icon: 'mdi-view-dashboard', path: '/' },
-           { title: 'Math', icon: 'mdi-plus-one', path: '/basicMath' },
-           { title: 'String App', icon: 'mdi-clipboard-text', path: '/stringApp'},
-           { title: 'About', icon: 'mdi-account', path: '/about'},
-           { title: 'Research', icon: 'mdi-feature-search', path: '/research'},
-           { title: 'Quiz App', icon: 'mdi-ab-testing', path: '/quizapp'},
+           { title: 'About the Application', icon: 'mdi-view-dashboard', path: '/' },
+           { title: 'Basic Calculator', icon: 'mdi-plus-one', path: '/basicMath' },
+           { title: 'String Manipulator', icon: 'mdi-clipboard-text', path: '/stringApp'},
+           { title: 'Quiz Application', icon: 'mdi-ab-testing', path: '/quizapplication'},
+           { title: 'Vuetify Research', icon: 'mdi-feature-search', path: '/research'},
+           { title: 'About the Creator', icon: 'mdi-account', path: '/about'},
+           
         ])
 
  function toggleDrawer(){
   return drawer.value = !drawer.value
  }
 
- 
 </script>
+
+<style>
+</style>
